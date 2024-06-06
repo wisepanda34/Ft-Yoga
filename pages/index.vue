@@ -5,7 +5,7 @@
  
 <template>
   <div>
-    Hello
+    Hello, world
   </div>
 </template>
  
