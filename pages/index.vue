@@ -4,8 +4,9 @@
 </script>
  
 <template>
-  <div>
-    Hello, world
+  <div >
+    <Header/>
+
   </div>
 </template>
  
