@@ -4,9 +4,8 @@
 </script>
  
 <template>
-  <div >
-    <Header/>
-
+  <div>
+    Page
   </div>
 </template>
  

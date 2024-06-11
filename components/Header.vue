@@ -10,7 +10,7 @@ const toggleMenu = () => {
 </script>
  
 <template>
-  <div class="header">
+  <header class="header">
     <Logo class="header__logo"/>
     <nav class="header__menu" :class="isOpenMenu ? 'open'  : ''">
       <ul class="header__list">
@@ -29,7 +29,7 @@ const toggleMenu = () => {
       <span></span>
       <span></span>
     </div>
-  </div>
+  </header>
 </template>
  
 <style scoped lang='scss'>
@@ -44,7 +44,7 @@ const toggleMenu = () => {
 
   font-size: 18px;
   color: $purple-nav;
-  background: yellow;
+  // background: yellow;
 
   &__menu{
     position: relative;
@@ -64,8 +64,11 @@ const toggleMenu = () => {
     display: flex;
     justify-content: space-between;
 
-    li{
+    *{
       cursor: pointer;
+      &:hover{
+        color: $purple-nav-hover;
+      }
     }
   }
   &__log{
@@ -103,17 +106,21 @@ const toggleMenu = () => {
   .header{
 
     &__menu{
-      display: none;
+      display: flex;
+      gap: 60px;
+      flex-direction: column;
+      justify-content: center;
       position: fixed;
       top: 0;
       left: 0;
-      width: 0;
+      width: 100vw;
       height: 100vh;
 
-      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
       background: $linear-purple;
-      transform: translateX(-120%);
-      transition: transform 0.8s ease-in-out;
+      transform: translateX(-110%);
+      transition: transform 0.8s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 
       &-close {
         display: block;
@@ -125,30 +132,23 @@ const toggleMenu = () => {
         transform: scaleX(1.4);
       }
     }
-    &__menu.open{
-      display: flex;
-      gap: 60px;
-      flex-direction: column;
-      justify-content: center;
-      width: 100vw;
-      height: 100vh;
-      transform: translateX(0);
-      transition: transform 0.8s ease-in-out;
-    }
-    
-    &__menu.open &__list{
+    &__list{
       width: auto;
       flex-direction: column;
       gap: 40px;
       font-size: 30px;
       text-align: center;
     }
-    &__menu.open &__log {
+    &__log {
       font-size: 30px;
       flex-direction: column;
       gap: 30px;
     }
-        
+    &__menu.open{
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
   }
   .burger{
     display: flex;
