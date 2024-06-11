@@ -14,16 +14,16 @@
             organization mature</p>
         </div>
         <div class="footer__head-info">
-          <div>
-            <h4>Address</h4>
+          <div class="footer__head-item">
+            <h4 class="footer__head-title">Address</h4>
             <p>1090  A/01 Richmond Avenue,<br> Houston, NY 7704, USA</p>
           </div>
-          <div>
-            <h4>Contact</h4>
+          <div class="footer__head-item">
+            <h4 class="footer__head-title">Contact</h4>
             <p>+123 456 789 147 <br> example@gmail.com </p>
           </div>
-          <div>
-            <h4>Office</h4>
+          <div class="footer__head-item">
+            <h4 class="footer__head-title">Office</h4>
             <p>Monday - Saturday <br> 9AM - 10PM</p>
           </div>
         </div>
@@ -76,13 +76,16 @@
     &-info {
       display: flex;
       justify-content: space-between;
-      div { padding: 10px;}
-      h4 {
-        font-family: "Adamina-Regular", serif;
-        color: $white;
-        font-size: 28px;
-        margin-bottom: 40px;
-      }
+      
+    }
+    &-items {
+      padding: 10px;
+    }
+    &-title {
+      font-family: "Adamina-Regular", serif;
+      color: $white;
+      font-size: 28px;
+      margin-bottom: 40px;
     }
   }
   &__line {
@@ -94,12 +97,6 @@
   &__low{
     display: flex;
     justify-content: space-between;
-  }
-  &__society{
-    
-  }
-  &__copy {
-   
   }
 }
 @media (max-width: 900px) {
@@ -114,14 +111,15 @@
         width: 100%;
         margin: 0 auto;
       }
-
       &-info{
         gap: 30px;
         margin-top: 30px;
-        div{padding: 0;}
-        h4{
-          margin-bottom: 15px;
-        }
+      }
+      &-items {
+       padding: 0;
+      }
+      &-title {
+        margin-bottom: 15px;
       }
     }
   }
