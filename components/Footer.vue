@@ -29,12 +29,20 @@
         </div>
       </div>
       <div class="footer__line"></div>
-      <div class="footer__low flex justify-between ">
+      <div class="footer__low flex justify-between">
         <div class="footer__society flex gap-8">
-          <NuxtImg src="/svg/insta.svg" width="24" to="/" alt="icon"/>
-          <NuxtImg src="/svg/telegram.svg" width="24" to="/" alt="icon"/>
-          <NuxtImg src="/svg/in.svg" to="/" width="24" alt="icon"/>
-          <NuxtImg src="/svg/twitter.svg" to="/" width="24" alt="icon"/>
+          <NuxtLink to="https://instagram.com">
+            <NuxtImg src="/svg/insta.svg" width="24" alt="Instagram icon"/>
+          </NuxtLink>
+          <NuxtLink to="https://telegram.org">
+            <NuxtImg src="/svg/telegram.svg" width="24" alt="Telegram icon"/>
+          </NuxtLink>
+          <NuxtLink to="https://linkedin.com">
+            <NuxtImg src="/svg/in.svg" width="24" alt="LinkedIn icon"/>
+          </NuxtLink>
+          <NuxtLink to="https://twitter.com">
+            <NuxtImg src="/svg/twitter.svg" width="24" alt="Twitter icon"/>
+          </NuxtLink>
         </div>
         <div class="footer__copy flex gap-1.5 items-center">
           <NuxtImg src="/svg/copy.svg" width="15" to="/" alt="icon"/>
@@ -46,29 +54,31 @@
 </template>
  
 <style scoped lang='scss'>
-.footer{
+.footer {
 
   background: $footer;
   color: $footer-color;
+  font-family: "Roboto-Regular", sans-serif;
 
 
-
-  &__container{
+  &__container {
     max-width: 1240px;
     margin: 0 auto;
     padding: 60px 20px;
   }
-  &__head{
+  &__head {
     display: grid;
     grid-template-columns: 1.2fr 2fr;
    
-    &-about{
+    &-about {
       width: 293px;
     }
-    &-info{
+    &-info {
       display: flex;
       justify-content: space-between;
+      div { padding: 10px;}
       h4 {
+        font-family: "Adamina-Regular", serif;
         color: $white;
         font-size: 28px;
         margin-bottom: 40px;
@@ -82,7 +92,8 @@
     margin: 20px 0;
   }
   &__low{
-  
+    display: flex;
+    justify-content: space-between;
   }
   &__society{
     
@@ -107,6 +118,7 @@
       &-info{
         gap: 30px;
         margin-top: 30px;
+        div{padding: 0;}
         h4{
           margin-bottom: 15px;
         }
