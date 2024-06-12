@@ -33,6 +33,4 @@
     animation: flashButton 0.5s;
   }
 }
-
-
 </style>

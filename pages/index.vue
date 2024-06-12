@@ -6,6 +6,7 @@
 <template>
   <div>
     <Teacher/>
+    <Nishe/>
     <Newsletter/>
   </div>
 </template>

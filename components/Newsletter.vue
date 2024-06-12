@@ -9,8 +9,8 @@ const sendEmail = () => {
 </script>
  
 <template>
-  <section class="pl-12 pr-12 sm:pl-0 sm:pr-0">
-    <div class="newsletter">
+  <section class="newsletter">
+    <div class="newsletter__wrapper">
       <h3 class="newsletter__title">Join Our Newsletter</h3>
       <p class="newsletter__text">
         Contrary to popular belief, Lorem Ipsum is not simply random text. It 
@@ -32,20 +32,23 @@ const sendEmail = () => {
  
 <style scoped lang='scss'>
 .newsletter {
-  max-width: 962px;
-  height: 358px;
-  margin: 100px auto;
-  padding: 10px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  background: $linear-purple;
-  border-radius: 32px;
-
-  color: $white;
+  &__wrapper {
+    max-width: 962px;
+    min-height: 358px;
+    margin: 100px auto;
+    padding: 10px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    background: $linear-purple;
+    border-radius: 32px;
+  
+    color: $white;
+  }
 
   &__title {
     font-family: "Adamina-Regular", serif;
@@ -84,7 +87,25 @@ const sendEmail = () => {
 }
 @media (max-width: 650px) {
   .newsletter {
-    padding: 0;
+
+    &__wrapper {
+      width: 100%;
+      padding-bottom: 20px;
+
+    }
+    &__input {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    &__field {
+      padding: 0 20px;
+    }
+    &__button {
+      position: static;
+      margin: 0 auto;
+      border: 1.5px solid $white;
+    }
   }
 }
 </style>
