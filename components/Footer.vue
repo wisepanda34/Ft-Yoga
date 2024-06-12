@@ -44,8 +44,8 @@
             <NuxtImg src="/svg/twitter.svg" width="24" alt="Twitter icon"/>
           </NuxtLink>
         </div>
-        <div class="footer__copy flex gap-1.5 items-center">
-          <NuxtImg src="/svg/copy.svg" width="15" to="/" alt="icon"/>
+        <div class="flex gap-1.5 items-center">
+          <NuxtImg class="pb-1" src="/svg/copy.svg" width="15" alt="icon"/>
           <p class="text-white">2024 Copyright, <span class="text-linear-purple">Falcon Throught</span></p>
         </div>
       </div>

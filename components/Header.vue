@@ -116,6 +116,7 @@ const toggleMenu = () => {
       width: 100vw;
       height: 100vh;
 
+      z-index: 100;
       opacity: 0;
       visibility: hidden;
       background: $linear-purple;

@@ -7,13 +7,13 @@
   <div class="page">
     <Header/>
     <slot class="page__slot"/>
-    <Footer class="page__footer"/>
-  </div>
+    </div>
+  <Footer class="page__footer"/>
 </template>
  
 <style scoped lang='scss'>
 .page {
-  max-width: 1440px;
+  max-width: 1240px;
   min-height: 100vh;
   padding: 20px;
   margin: 0 auto;

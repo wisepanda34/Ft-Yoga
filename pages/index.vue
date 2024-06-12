@@ -4,9 +4,10 @@
 </script>
  
 <template>
-  <section>
-    
-  </section>
+  <div>
+    <Teacher/>
+    <Newsletter/>
+  </div>
 </template>
  
 <style scoped lang='scss'>

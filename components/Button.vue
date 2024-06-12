@@ -23,9 +23,16 @@
   color: $white;
   background: $linear-purple;
   border-radius: 40px;
+  transition: background-color 0.5s;
 
   &:hover{
     background: $linear-purple-hover;
   }
+
+  &:active{
+    animation: flashButton 0.5s;
+  }
 }
+
+
 </style>

@@ -67,3 +67,18 @@
   opacity: 0;
   transform: translateX(30px);
 }
+
+@keyframes flashButton {
+  0% {
+    background: $linear-purple;
+  }
+  20% {
+    background: lighten(#FF62B7, 5%);
+  }
+  80% {
+    background: lighten(#FF62B7, 5%);
+  }
+  100% {
+    background: $linear-purple;
+  }
+}
