@@ -90,6 +90,7 @@ const sendEmail = () => {
 
     &__wrapper {
       width: 100%;
+      margin: 50px auto;
       padding-bottom: 20px;
 
     }

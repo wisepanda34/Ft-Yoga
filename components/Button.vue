@@ -1,10 +1,12 @@
 <!-- Button.vue -->
 <script setup lang='ts'>
-
+const props = defineProps<{
+  isRounded?: true
+}>()
 </script>
  
 <template>
-  <button class="btn">
+  <button class="btn" :class="isRounded ? 'btn-rounded': ''">
     <slot/>
   </button>
 </template>
@@ -24,6 +26,13 @@
   background: $linear-purple;
   border-radius: 40px;
   transition: background-color 0.5s;
+
+  &-rounded {
+    width: 120px!important;
+    min-width: auto;
+    height: 120px!important;
+    border-radius: 50%!important;
+  }
 
   &:hover{
     background: $linear-purple-hover;

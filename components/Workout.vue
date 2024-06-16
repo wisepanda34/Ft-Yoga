@@ -1,45 +1,47 @@
-<!-- Healthy.vue -->
+<!-- Workout.vue -->
 <script setup lang='ts'>
- 
- const handleStart = () => {
-  console.log('handleStart');
+
+ const handleStarted = () => {
+  console.log('handleStarted');
  }
 </script>
  
 <template>
-  <section class="healthy">
-    <div class="healthy__picture">
-      <NuxtImg class="healthy__img" src="/images/boy1.png" alt="image"/>
-    </div>
-    <div class="healthy__content">
-      <h2 class="healthy__title">Get Happiness To <br> Good Healthy!</h2>
-      <p class="healthy__text">
+  <section class="workout">
+    <div class="workout__content">
+      <h2 class="workout__title">Anytime, Any<br> Place, Any <br> Workuot</h2>
+      <p class="workout__text">
         There Are Many Variations Of Passages of Lorem Ipsum Available, 
         But The Majority Have
       </p>
-      <Button class="healthy__button" @click="handleStart">
-        Let's Start &nbsp;&nbsp;<NuxtImg src="/images/arrow-white.png" width="30"/>
+      <Button class="workout__button" @click="handleStarted">
+        Get Started Free &nbsp;&nbsp;<NuxtImg src="/images/arrow-white.png" width="30"/>
       </Button>
+    </div>
+    <div class="workout__picture">
+      <div class="workout__img">
+        <NuxtImg src="/images/girls3.png" alt="img"/>
+      </div>
     </div>
   </section>
 </template>
  
 <style scoped lang='scss'>
-.healthy {
+ .workout {
   display: flex;
   gap: 2%;
   flex-wrap: nowrap;
   margin-top: 8vw;
 
   &__picture {
-    max-width: 48%;
+    max-width: 60%;
   }
   &__img {
     width: 100%;
     object-fit: cover;
   }
   &__content {
-    padding-top: 10%;
+    padding-top: 8%;
   }
   &__title {
     font-family: "Adamina-Regular", serif;
@@ -58,8 +60,8 @@
 }
 
 @media (max-width: 1179px) {
-  .healthy {
-    flex-direction: column;
+  .workout {
+    flex-direction: column-reverse;
 
     &__picture {
       max-width: 70%;
@@ -69,9 +71,7 @@
   }
 }
 @media (max-width: 740px) {
-  .healthy {
-    flex-direction: column;
-
+  .workout {
     &__picture {
       max-width: 100%;
     }

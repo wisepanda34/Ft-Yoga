@@ -8,6 +8,8 @@
     <Teacher/>
     <Nishe/>
     <Healthy/>
+    <Workout/>
+    <Follow/>
     <Newsletter/>
   </div>
 </template>
