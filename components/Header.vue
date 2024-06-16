@@ -11,40 +11,44 @@ const toggleMenu = () => {
  
 <template>
   <header class="header">
-    <Logo class="header__logo"/>
-    <nav class="header__menu" :class="isOpenMenu ? 'open'  : ''">
-      <ul class="header__list">
-        <NuxtLink to="/" @click="toggleMenu">Pricing</NuxtLink>
-        <NuxtLink to="/" @click="toggleMenu">About</NuxtLink>
-        <NuxtLink to="/" @click="toggleMenu">Contacts</NuxtLink>
-      </ul>
-      <div class="header__log">
-        <div class="header__in">Log In</div>
-        <Button class="header__login btn--mobile-menu">Log In</Button>
+    <div class="container">
+      <div class="header__wrapper">
+         <Logo class="header__logo"/>
+        <nav class="header__menu" :class="{ open: isOpenMenu }">
+          <ul class="header__list">
+            <NuxtLink to="/" @click="toggleMenu">Pricing</NuxtLink>
+            <NuxtLink to="/" @click="toggleMenu">About</NuxtLink>
+            <NuxtLink to="/" @click="toggleMenu">Contacts</NuxtLink>
+          </ul>
+          <div class="header__log">
+            <div class="header__in">Log In</div>
+            <Button class="header__login btn--mobile-menu">Log In</Button>
+          </div>
+          <div class="header__menu-close" @click="toggleMenu">X</div>
+        </nav>
+        <div class="burger" @click="toggleMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
-      <div class="header__menu-close" @click="toggleMenu">X</div>
-    </nav>
-    <div class="burger" @click="toggleMenu">
-      <span></span>
-      <span></span>
-      <span></span>
     </div>
   </header>
+  
 </template>
  
 <style scoped lang='scss'>
 .header{
-  width: 100%;
-  height: 66px;
-  align-items: center;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  font-size: 18px;
-  color: $purple-nav;
-
+  height: 106px;
+  padding: 20px 0;
+  
+  &__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    color: $purple-nav;
+  }
   &__menu{
     position: relative;
     width: 644px;
@@ -154,6 +158,9 @@ const toggleMenu = () => {
   }
   .burger{
     display: flex;
+    position: absolute;
+    top: 20px;
+    right: 20px;
   }
 }
 </style>

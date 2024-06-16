@@ -1,34 +1,42 @@
 <!-- Nishe.vue -->
-<script setup lang='ts'>
+<script setup >
  
 </script>
  
 <template>
   <section class="nishe">
-    <div class="nishe__number">#01</div>
-    <div class="nishe__picture">
-      <NuxtImg class="nishe__picture-img" src="/images/girl2.png" alt="img"/>
-    </div>
-    <div class="nishe__content">
-      Get Targeted Influencers List In Your Niche At Your Fingertips So You Can Focus On Running Your.
-      <NuxtImg class="nishe__content-stars" src="/images/stars.png"/>
-    </div>
-    <div class="nishe__next">
-      <NuxtImg class="nishe__next-arrow" src="/images/next.png"/>
-      <NuxtImg id="ellipse-1" src="/images/ellipse.png"/>
-      <NuxtImg id="ellipse-2" src="/images/ellipse.png"/>
+    <div class="container">
+      <div class="nishe__wrapper">
+        <div class="nishe__number">#01</div>
+        <div class="nishe__picture">
+          <NuxtImg class="nishe__picture-img" src="/images/girl2.png" alt="img"/>
+        </div>
+        <div class="nishe__content">
+          Get Targeted Influencers List In Your Niche At Your Fingertips So You Can Focus On Running Your.
+          <NuxtImg class="nishe__content-stars" src="/images/stars.png"/>
+        </div>
+        <div class="nishe__next">
+          <NuxtImg class="nishe__next-arrow" src="/images/next.png"/>
+          <NuxtImg id="ellipse-1" src="/images/ellipse.png"/>
+          <NuxtImg id="ellipse-2" src="/images/ellipse.png"/>
+        </div>
+      </div>
     </div>
   </section>
 </template>
  
 <style scoped lang='scss'>
 .nishe {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  margin-top: 260px;
-  flex-wrap: nowrap;
+  padding: 20px 0 70px;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 100px;
+    flex-wrap: nowrap;
+  }
 
   &__number {
     font-family: "Adamina-Regular", serif;
@@ -102,30 +110,25 @@
 }
 @media (max-width: 1179px) {
   .nishe {
-    flex-wrap: wrap;
-    column-gap: 3vw;
-    row-gap: 80px;
-    margin-top: 20vw;
-
-
-    &__number {
-
+    padding: 20px 0;
+    &__wrapper {
+      flex-wrap: wrap;
+      column-gap: 3vw;
+      row-gap: 80px;
+      margin-top: 10vw;
     }
+    
     &__picture {
       flex-basis: 60%;
     }
-    &__content {
-
-    } 
-    &__next {
-    }
-    
   }
 }
 @media (max-width: 600px) {
   .nishe {
-    column-gap: 0;
-    margin-top: 10vw;
+    &__wrapper {
+      column-gap: 0;
+      margin-top: 10vw;
+    }
 
     &__picture {
       flex-basis: 100%;
@@ -138,7 +141,6 @@
     &__next {
       margin-top: -50px;
     }
-    
   }
 }
 </style>

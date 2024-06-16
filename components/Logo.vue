@@ -14,5 +14,13 @@
   width: 127px;
   height: 45px;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100%;
+  }
+
  }
 </style>

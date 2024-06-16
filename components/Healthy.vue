@@ -1,5 +1,5 @@
 <!-- Healthy.vue -->
-<script setup lang='ts'>
+<script setup>
  
  const handleStart = () => {
   console.log('handleStart');
@@ -8,37 +8,44 @@
  
 <template>
   <section class="healthy">
-    <div class="healthy__picture">
-      <NuxtImg class="healthy__img" src="/images/boy1.png" alt="image"/>
-    </div>
-    <div class="healthy__content">
-      <h2 class="healthy__title">Get Happiness To <br> Good Healthy!</h2>
-      <p class="healthy__text">
-        There Are Many Variations Of Passages of Lorem Ipsum Available, 
-        But The Majority Have
-      </p>
-      <Button class="healthy__button" @click="handleStart">
-        Let's Start &nbsp;&nbsp;<NuxtImg src="/images/arrow-white.png" width="30"/>
-      </Button>
+    <div class="container">
+      <div class="healthy__wrapper">
+        <div class="healthy__picture">
+          <NuxtImg class="healthy__img" src="/images/boy1.png" alt="image"/>
+        </div>
+        <div class="healthy__content">
+          <h2 class="healthy__title">Get Happiness To <br> Good Healthy!</h2>
+          <p class="healthy__text">
+            There Are Many Variations Of Passages of Lorem Ipsum Available, 
+            But The Majority Have
+          </p>
+          <Button class="healthy__button" @click="handleStart">
+            Let's Start &nbsp;&nbsp;<NuxtImg src="/images/arrow-white.png" width="30"/>
+          </Button>
+        </div>
+      </div>
     </div>
   </section>
 </template>
  
 <style scoped lang='scss'>
 .healthy {
-  display: flex;
-  gap: 2%;
-  flex-wrap: nowrap;
-  margin-top: 8vw;
+  padding: 20px 0;
 
+  &__wrapper {
+    display: flex;
+    gap: 3%;
+    flex-wrap: nowrap;
+  }
   &__picture {
-    max-width: 48%;
+    width: 47%;
   }
   &__img {
     width: 100%;
     object-fit: cover;
   }
   &__content {
+    width: 50%;
     padding-top: 10%;
   }
   &__title {
@@ -59,10 +66,15 @@
 
 @media (max-width: 1179px) {
   .healthy {
-    flex-direction: column;
-
+    &__wrapper {
+      flex-direction: column;
+    }
+    &__content {
+      width: 100%;
+      padding-top: 10px;
+    }
     &__picture {
-      max-width: 70%;
+      width: 70%;
       height: auto;
       margin: 0 auto;
     }
@@ -70,10 +82,8 @@
 }
 @media (max-width: 740px) {
   .healthy {
-    flex-direction: column;
-
     &__picture {
-      max-width: 100%;
+      width: 100%;
     }
     &__title {
       width: 100%;

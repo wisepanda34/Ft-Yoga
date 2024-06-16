@@ -1,5 +1,5 @@
 <!-- Newsletter.vue -->
-<script setup lang='ts'>
+<script setup>
 
 const email = ref('')
 const sendEmail = () => {
@@ -32,6 +32,7 @@ const sendEmail = () => {
  
 <style scoped lang='scss'>
 .newsletter {
+  padding: 20px;
 
   &__wrapper {
     max-width: 962px;
@@ -85,9 +86,18 @@ const sendEmail = () => {
     right: 5px;
   }
 }
+@media (max-width: 1179px) {
+  .newsletter {
+    &__wrapper {
+      width: 100%;
+      margin: 50px auto;
+      padding-bottom: 20px;
+    }
+  }
+}
 @media (max-width: 650px) {
   .newsletter {
-
+    padding: 10px;
     &__wrapper {
       width: 100%;
       margin: 50px auto;

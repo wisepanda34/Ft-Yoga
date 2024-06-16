@@ -1,16 +1,16 @@
 <!-- pages/index.vue -->
-<script setup lang='ts'>
+<script setup>
  
 </script>
  
 <template>
   <div>
     <!-- <div class="spinner"></div> -->
-    <!-- <Teacher/> -->
-    <!-- <Nishe/> -->
-    <!-- <Healthy/> -->
-    <!-- <Workout/> -->
-    <!-- <Follow/> -->
+    <Teacher/>
+    <Nishe/>
+    <Healthy/>
+    <Workout/>
+    <Follow/>
     <Newsletter/>
   </div>
 </template>
