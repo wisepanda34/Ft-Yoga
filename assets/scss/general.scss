@@ -14,13 +14,31 @@ body {
   color: $text-main;
 }
 
-.title {
-  
+.page {
+  min-height: 100vh;
+  user-select: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
 }
 
+.container {
+  max-width: 1240px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+
 @media (max-width: 900px) {
+  .container {
+    padding: 0 10px ;
+  }
   .btn--mobile-menu {
     font-size: 24px!important;
     border: 2px solid $white;
   }
 }
+
+

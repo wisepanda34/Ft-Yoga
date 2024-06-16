@@ -8,7 +8,7 @@
     <div class="footer__container">
       <div class="footer__head">
         <div class="footer__head-about">
-          <Logo class="mb-3"/>
+          <h3 class="footer__head-logo">FT Yoga</h3>
           <p>About pages are perfect spaces to talk about where you started, 
             how you've grown, and the ideals that have helped your 
             organization mature</p>
@@ -29,8 +29,8 @@
         </div>
       </div>
       <div class="footer__line"></div>
-      <div class="footer__low flex justify-between">
-        <div class="footer__society flex gap-8">
+      <div class="footer__low">
+        <div class="footer__society">
           <NuxtLink to="https://instagram.com">
             <NuxtImg src="/svg/insta.svg" width="24" alt="Instagram icon"/>
           </NuxtLink>
@@ -44,9 +44,9 @@
             <NuxtImg src="/svg/twitter.svg" width="24" alt="Twitter icon"/>
           </NuxtLink>
         </div>
-        <div class="flex gap-1.5 items-center">
-          <NuxtImg class="pb-1" src="/svg/copy.svg" width="15" alt="icon"/>
-          <p class="text-white">2024 Copyright, <span class="text-linear-purple">Falcon Throught</span></p>
+        <div class="footer__copy">
+          <NuxtImg src="/svg/copy.svg" width="15" alt="icon"/>
+          <p class="footer__copy-white">2024 Copyright, <span class="text-linear-purple">Falcon Throught</span></p>
         </div>
       </div>
     </div>
@@ -73,6 +73,19 @@
     &-about {
       width: 293px;
     }
+    &-logo {
+      font-family: "Adamina-Regular", serif;
+      font-size: 35px;
+      line-height: 120%;
+      background: $linear-purple;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 16px;
+      margin-top: -8px;
+
+    }
     &-info {
       display: flex;
       justify-content: space-between;
@@ -97,6 +110,18 @@
   &__low{
     display: flex;
     justify-content: space-between;
+  }
+  &__society {
+    display: flex;
+    gap: 32px;
+  }
+  &__copy {
+    display: flex;
+    gap: 5px;
+
+    &-white {
+      color: $white;
+    }
   }
 }
 @media (max-width: 900px) {

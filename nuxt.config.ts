@@ -17,7 +17,7 @@ export default defineNuxtConfig({
     
   },
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', "@nuxt/image", 'nuxt-swiper', '@morev/vue-transitions/nuxt'],
+  modules: ['@pinia/nuxt', "@nuxt/image", 'nuxt-swiper', '@morev/vue-transitions/nuxt'],
   css: [
     '~/assets/scss/main.scss',
   ],
