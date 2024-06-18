@@ -1,6 +1,7 @@
 <!-- Teacher.vue -->
 <script setup>
- 
+ import 'animate.css';
+
 </script>
  
 <template>
@@ -29,7 +30,7 @@
           </div>
         </div>
         <div class="teacher__picture">
-          <NuxtImg  src="/images/girl1.png" />
+          <NuxtImg class="animate__animated and animate__slideInRight"  src="/images/girl1.png" />
         </div>
       </div>
     </div>
@@ -38,6 +39,7 @@
 </template>
  
 <style scoped lang='scss'>
+
  .teacher {
   padding: 20px 0 100px;
   &__wrapper {
@@ -64,6 +66,7 @@
     color: $white;
     border-radius: 16px;
     transform: rotate(10deg) translateY(17px);
+    animation: small-rotate 5s 2s infinite linear;
   }
   &__round {
     transform: translate(-18px, -20px);
@@ -98,7 +101,6 @@
     right: -60px;
     width: 822px;
     height: 960px;
-    overflow: hidden;
     z-index: 10;
 
     img {

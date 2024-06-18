@@ -6,17 +6,39 @@ const sendEmail = () => {
   console.log('sendEmail');
   email.value = ''
 }
+
+const imgRef = ref(null);
+const isVisible = ref(false)
+const options = {
+  threshold: 0.8,
+  rootMargin: "0px"
+}
+
+const handleIntersection = (entry) => {
+  entry.forEach((entry) => {
+    if (entry.isIntersecting) {
+      isVisible.value = true
+      console.log('isVisible', isVisible);
+    }
+  })
+}
+
+onMounted (() => {
+  const observer = new IntersectionObserver(handleIntersection, options)
+  observer.observe(imgRef.value)
+})
 </script>
  
 <template>
   <section class="newsletter">
+    
     <div class="newsletter__wrapper">
       <h3 class="newsletter__title">Join Our Newsletter</h3>
       <p class="newsletter__text">
         Contrary to popular belief, Lorem Ipsum is not simply random text. It 
          has roots in a piece of classical Latin literature from 45 BC, making.
       </p>
-      <div class="newsletter__input">
+      <div ref="imgRef" class="newsletter__input">
         <input class="newsletter__field" 
           v-model="email"
           type="text" 
