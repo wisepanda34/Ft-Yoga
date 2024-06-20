@@ -1,48 +1,19 @@
 <!-- Healthy.vue -->
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
-import 'animate.css';
+import { useAnimationObserver } from '~/composables/useAnimation';
+
+const { animationRef } = useAnimationObserver(addAnimation, removeAnimation);
 
 const handleStart = () => {
   console.log('handleStart');
 }
-
-const imgHealthyRef = ref(null);
-const options = {
-  threshold: 0.8,
-  rootMargin: "0px"
-}
-
-
-
-
-const handleIntersection1 = (entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      console.log('imgHealthyRef');
-      entry.target.classList.add("animate__animated", "animate__slideInLeft");
-    }
-  });
-    
-}
-
-onMounted (() => {
-  const observer = new IntersectionObserver(handleIntersection1, options)
-  if (imgHealthyRef.value)  observer.observe(imgHealthyRef.value)
-})
- 
-onUnmounted (() => {
-  observer.unobserveobserve(imgHealthyRef.value)
-})
-
-
 </script>
 
 <template>
   <section class="healthy">
     <div class="container">
       <div class="healthy__wrapper">
-        <div ref="imgHealthyRef" class="healthy__picture">
+        <div ref="animationRef" class="healthy__picture">
           <NuxtImg class="healthy__img" src="/images/boy1.png" alt="image"/>
         </div>
         <div class="healthy__content">
@@ -61,6 +32,7 @@ onUnmounted (() => {
 </template>
 
 <style scoped lang='scss'>
+
 .healthy {
   padding: 20px 0;
 
@@ -75,6 +47,11 @@ onUnmounted (() => {
   &__img {
     width: 100%;
     object-fit: cover;
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  .animate &__img {
+    animation: slideInFromLeft 0.5s linear forwards;
   }
   &__content {
     width: 50%;

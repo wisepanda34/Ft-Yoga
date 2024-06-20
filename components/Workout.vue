@@ -1,9 +1,13 @@
 <!-- Workout.vue -->
 <script setup>
+import { useAnimationObserver } from '~/composables/useAnimation';
 
- const handleStarted = () => {
+const { animationRef } = useAnimationObserver(addAnimation, removeAnimation);
+
+const handleStarted = () => {
   console.log('handleStarted');
  }
+
 </script>
  
 <template>
@@ -20,8 +24,8 @@
             Get Started Free &nbsp;&nbsp;<NuxtImg src="/images/arrow-white.png" width="30"/>
           </Button>
         </div>
-        <div class="workout__picture">
-          <NuxtImg src="/images/girls3.png" alt="img"/>
+        <div ref="animationRef" class="workout__picture">
+          <NuxtImg class="workout__img" src="/images/girls3.png" alt="img"/>
         </div>
       </div>
     </div>
@@ -60,10 +64,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    img {
-      width: 100%;
-    }
+  }
+  &__img {
+    width: 100%;
+    object-fit: cover;
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  .animate &__img {
+    animation: slideInFromRight 0.5s linear forwards;
   }
 }
 

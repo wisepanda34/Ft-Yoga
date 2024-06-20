@@ -1,14 +1,17 @@
 <!-- Foloow.vue -->
 <script setup>
- 
+import { useAnimationObserver } from '~/composables/useAnimation';
+
+const { animationRef } = useAnimationObserver(addAnimation, removeAnimation);
+
 </script>
  
 <template>
   <section class="follow">
     <div class="container">
-      <div class="follow__block">
+      <div ref="animationRef" class="follow__block">
         <NuxtImg id="girl4" order="1" src="/images/girl4.png" alt="img"/>
-        <div class="follow__content" order="2">
+        <div  class="follow__content" order="2">
           <h2 class="follow__title">
             Follow Us On Instagram <span>#FTYOGA</span>
           </h2>
@@ -28,6 +31,7 @@
 </template>
  
 <style scoped lang='scss'>
+
 .follow {
   margin: 100px 0;
 
@@ -42,7 +46,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    transform: translateY(100px);
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  .animate &__content {
+    animation: slideInFromUp 0.5s linear forwards;
   }
 
   &__title {

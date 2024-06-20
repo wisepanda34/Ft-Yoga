@@ -82,8 +82,8 @@
     background: $linear-purple;
   }
 }
-
 @keyframes small-rotate {
+  
   0% {
     transform: rotate(10deg);
   }
@@ -91,7 +91,7 @@
     transform: rotate(12deg);
   }
   3% {
-    transform: rotate (8deg);
+    transform: rotate(8deg);
   }
   5% {
     transform: rotate(12deg);
@@ -118,7 +118,6 @@
     transform: rotate(10deg);
   }
  }
-
  @keyframes spinner-rotate {
   0% {
     transform: rotate(0);
@@ -127,3 +126,34 @@
     transform: rotate(360deg);
   }
  }
+ @keyframes slideInFromLeft{
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+ }
+ @keyframes slideInFromRight{
+  0% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+ }
+ @keyframes slideInFromUp{
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(50px);
+    opacity: 1;
+  }
+ }
+ 

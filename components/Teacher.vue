@@ -1,6 +1,8 @@
 <!-- Teacher.vue -->
 <script setup>
- import 'animate.css';
+import { useAnimationObserver } from '~/composables/useAnimation';
+
+const { animationRef } = useAnimationObserver(addAnimation, removeAnimation);
 
 </script>
  
@@ -22,6 +24,7 @@
           <Button class="teacher__btn">
             Get Started Free &nbsp;&nbsp;<NuxtImg  src="/images/arrow-white.png" width="30"/>
           </Button>
+          
           <div class="teacher__participent">
             <div class="teacher__nums">300<span class="teacher__nums-plus">+</span></div>
             <div class="teacher__nums">40k<span class="teacher__nums-plus">+</span></div>
@@ -29,8 +32,8 @@
             <div class="text-xl">Participent</div>
           </div>
         </div>
-        <div class="teacher__picture">
-          <NuxtImg class="animate__animated and animate__slideInRight"  src="/images/girl1.png" />
+        <div ref="animationRef" class="teacher__picture">
+          <NuxtImg class="teacher__img"  src="/images/girl1.png" alt="img"/>
         </div>
       </div>
     </div>
@@ -65,8 +68,8 @@
     background: $linear-purple;
     color: $white;
     border-radius: 16px;
-    transform: rotate(10deg) translateY(17px);
-    animation: small-rotate 5s 2s infinite linear;
+    transform: rotate(12deg);
+    animation: small-rotate 4s 2s infinite linear;
   }
   &__round {
     transform: translate(-18px, -20px);
@@ -102,10 +105,15 @@
     width: 822px;
     height: 960px;
     z-index: 10;
-
-    img {
-      max-width: 100%;
-    }
+  }
+  &__img {
+    max-width: 100%;
+    object-fit: cover;
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  .animate &__img {
+    animation: slideInFromRight 0.5s linear forwards;
   }
  }
  @media (max-width: 1179px) {
@@ -136,8 +144,9 @@
     }
     &__picture {
       position: static;
-      width: 100%;
-      padding-top: 0;
+      width: 70%;
+      margin: 0 auto;
+      padding: 0 0 10%;
     }
   }
  }
@@ -146,6 +155,10 @@
     &__title {
       width: 100%;
       font-size: 18vw;
+    }
+    &__picture {
+      width: 100%;
+      padding: 0;
     }
   }
  }
