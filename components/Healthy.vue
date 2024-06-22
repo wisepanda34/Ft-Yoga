@@ -2,7 +2,7 @@
 <script setup>
 import { useAnimationObserver } from '~/composables/useAnimation';
 
-const { animationRef } = useAnimationObserver(addAnimation, removeAnimation);
+const healthyRef = useAnimationObserver(addAnimation, removeAnimation);
 
 const handleStart = () => {
   console.log('handleStart');
@@ -13,11 +13,14 @@ const handleStart = () => {
   <section class="healthy">
     <div class="container">
       <div class="healthy__wrapper">
-        <div ref="animationRef" class="healthy__picture">
+        <div ref="healthyRef" class="healthy__picture">
           <NuxtImg class="healthy__img" src="/images/boy1.png" alt="image"/>
         </div>
         <div class="healthy__content">
           <h2 class="healthy__title">Get Happiness To <br> Good Healthy!</h2>
+          <div class="healthy__decor">
+            <Decor/>
+          </div>
           <p class="healthy__text">
             There Are Many Variations Of Passages of Lorem Ipsum Available, 
             But The Majority Have
@@ -39,7 +42,6 @@ const handleStart = () => {
   &__wrapper {
     display: flex;
     gap: 3%;
-    flex-wrap: nowrap;
   }
   &__picture {
     width: 47%;
@@ -54,6 +56,7 @@ const handleStart = () => {
     animation: slideInFromLeft 0.5s linear forwards;
   }
   &__content {
+    position: relative;
     width: 50%;
     padding-top: 10%;
   }
@@ -70,6 +73,12 @@ const handleStart = () => {
   }
   &__button {
     margin-top: 32px;
+  }
+  &__decor {
+    position: absolute;
+    display: inline-block;
+    top: 45%;
+    right: 0;
   }
 }
 
@@ -100,6 +109,9 @@ const handleStart = () => {
     }
     &__button {
       margin: 32px auto;
+    }
+    &__decor {
+      top: 30%;
     }
   }
 }

@@ -2,7 +2,7 @@
 <script setup>
 import { useAnimationObserver } from '~/composables/useAnimation';
 
-const { animationRef } = useAnimationObserver(addAnimation, removeAnimation);
+const workoutRef = useAnimationObserver(addAnimation, removeAnimation);
 
 const handleStarted = () => {
   console.log('handleStarted');
@@ -15,7 +15,7 @@ const handleStarted = () => {
     <div class="container">
       <div class="workout__wrapper">
         <div class="workout__content">
-          <h2 class="workout__title">Anytime, Any<br> Place, Any <br> Workuot</h2>
+          <h2 class="workout__title">Anytime, Any<br> Place, Any <br> Workout</h2>
           <p class="workout__text">
             There Are Many Variations Of Passages of Lorem Ipsum Available, 
             But The Majority Have
@@ -24,7 +24,7 @@ const handleStarted = () => {
             Get Started Free &nbsp;&nbsp;<NuxtImg src="/images/arrow-white.png" width="30"/>
           </Button>
         </div>
-        <div ref="animationRef" class="workout__picture">
+        <div ref="workoutRef" class="workout__picture">
           <NuxtImg class="workout__img" src="/images/girls3.png" alt="img"/>
         </div>
       </div>
@@ -39,7 +39,6 @@ const handleStarted = () => {
   &__wrapper {
     display: flex;
     gap: 2%;
-    flex-wrap: nowrap;
   }
   &__content {
     padding-top: 8%;
@@ -97,6 +96,7 @@ const handleStarted = () => {
     &__title {
       width: 100%;
       font-size: 12vw;
+      white-space: normal;
     }
     &__button {
       margin: 32px auto;

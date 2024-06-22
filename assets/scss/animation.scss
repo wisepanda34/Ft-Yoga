@@ -156,4 +156,25 @@
     opacity: 1;
   }
  }
+ @keyframes float-x {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+      -webkit-transform: translateX(-7px);
+      transform: translateX(-7px);
+  }
+}
+@keyframes float-y {
+  0%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-7px);
+    transform: translateY(-7px);
+  }
+
+}
  

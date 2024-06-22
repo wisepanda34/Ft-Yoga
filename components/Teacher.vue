@@ -2,7 +2,7 @@
 <script setup>
 import { useAnimationObserver } from '~/composables/useAnimation';
 
-const { animationRef } = useAnimationObserver(addAnimation, removeAnimation);
+const teacherRef = useAnimationObserver(addAnimation);
 
 </script>
  
@@ -16,7 +16,9 @@ const { animationRef } = useAnimationObserver(addAnimation, removeAnimation);
             Best <span class="teacher__yoga">Yoga</span> <br>
             Teacher
           </h1>
-          <NuxtImg class="teacher__round" width="24" src="/images/rounds.png" alt="icon"/> 
+          <div class="teacher__decor">
+            <Decor/>
+          </div>
           <p class="teacher__text">
             There are many variations of passages of <br> 
             Lorem Ipsum Available, but the Majority Have
@@ -32,7 +34,7 @@ const { animationRef } = useAnimationObserver(addAnimation, removeAnimation);
             <div class="text-xl">Participent</div>
           </div>
         </div>
-        <div ref="animationRef" class="teacher__picture">
+        <div ref="teacherRef" class="teacher__picture">
           <NuxtImg class="teacher__img"  src="/images/girl1.png" alt="img"/>
         </div>
       </div>
@@ -49,7 +51,6 @@ const { animationRef } = useAnimationObserver(addAnimation, removeAnimation);
     width: 100%;
     position: relative;
   }
-  
   &__content {
     width: 600px;
     padding-top: 5%;
@@ -71,8 +72,10 @@ const { animationRef } = useAnimationObserver(addAnimation, removeAnimation);
     transform: rotate(12deg);
     animation: small-rotate 4s 2s infinite linear;
   }
-  &__round {
-    transform: translate(-18px, -20px);
+  &__decor {
+    display: inline-block;
+    margin-bottom: 30px;
+    transform: translateX(-15px);
   }
   &__text {
     font-size: 20px;
@@ -139,8 +142,8 @@ const { animationRef } = useAnimationObserver(addAnimation, removeAnimation);
     &__content {
       width: 100%;
     }
-    &__round {
-      transform: translate(0, -10px);
+    &__decor {
+      transform: translateX(70vw);
     }
     &__picture {
       position: static;

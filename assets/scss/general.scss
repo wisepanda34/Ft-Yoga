@@ -15,6 +15,7 @@ body {
 }
 
 .page {
+  position: relative;
   min-height: 100vh;
   user-select: none;
 
@@ -30,7 +31,36 @@ body {
   margin: 0 auto;
 }
 
+.spinner {
+  display: inline;
+  position: absolute;
+  top: 35vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  
+  z-index: 1000;
+  &-round {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border: 15px solid $purple-nav-hover; 
+    border-radius: 50%;
+    border-top-color:  $purple-nav;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.7);
+    animation: spinner-rotate 1.2s 0.3s infinite linear;
+  }
+ }
 
+.float-x {
+  display: inline-block;
+  animation: float-x 4s infinite ease-in-out;
+}
+.float-y {
+  animation: float-y 6s infinite ease-in-out;
+}
+ 
 
 @media (max-width: 900px) {
   .container {

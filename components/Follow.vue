@@ -2,14 +2,15 @@
 <script setup>
 import { useAnimationObserver } from '~/composables/useAnimation';
 
-const { animationRef } = useAnimationObserver(addAnimation, removeAnimation);
+const followRef = useAnimationObserver(addAnimation, removeAnimation);
+const followImgRef = useAnimationObserver(addAnimation, removeAnimation);
 
 </script>
  
 <template>
   <section class="follow">
     <div class="container">
-      <div ref="animationRef" class="follow__block">
+      <div ref="followRef" class="follow__block">
         <NuxtImg id="girl4" order="1" src="/images/girl4.png" alt="img"/>
         <div  class="follow__content" order="2">
           <h2 class="follow__title">
@@ -22,7 +23,7 @@ const { animationRef } = useAnimationObserver(addAnimation, removeAnimation);
         </div>
         <NuxtImg id="girl5" order="3" src="/images/girl5.png" alt="img"/>
       </div>
-      <div class="follow__img">
+      <div ref="followImgRef" class="follow__img">
         <NuxtImg id="girl6" src="/images/girl6.png" alt="img"/>
         <NuxtImg id="boy2" src="/images/boy2.png" alt="img"/>
       </div>

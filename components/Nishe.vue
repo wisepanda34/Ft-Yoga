@@ -35,7 +35,6 @@
     align-items: center;
     gap: 10px;
     margin-top: 100px;
-    flex-wrap: nowrap;
   }
 
   &__number {
@@ -44,9 +43,7 @@
     line-height: 120%;
     font-weight: 900;
     color: $purple-nav;
-
     text-shadow: 1px 2.5px 3px rgb(26, 22, 22);
-
     order: 1;
   }
   &__picture {
