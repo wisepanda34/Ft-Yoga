@@ -46,7 +46,7 @@ const teacherRef = useAnimationObserver(addAnimation);
 <style scoped lang='scss'>
 
  .teacher {
-  padding: 20px 0 100px;
+  padding: 20px 0 50px;
   &__wrapper {
     width: 100%;
     position: relative;

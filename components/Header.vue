@@ -1,12 +1,20 @@
 <!-- components/Header.vue -->
-<script setup lang='ts'>
+<script setup>
 
 const isOpenMenu = ref(false)
+
 const toggleMenu = () => {
-  isOpenMenu.value = !isOpenMenu.value
-  console.log('isOpenMenu.value ', isOpenMenu.value);
-  
+  if (window.innerWidth <= 900) {
+    isOpenMenu.value = !isOpenMenu.value
+    console.log('isOpenMenu.value ', isOpenMenu.value)
+    if (isOpenMenu.value) {
+        document.body.classList.add('no-scroll')
+      } else {
+        document.body.classList.remove('no-scroll')
+      }
+  }
 }
+
 </script>
  
 <template>
@@ -21,8 +29,8 @@ const toggleMenu = () => {
             <NuxtLink to="/" @click="toggleMenu">Contacts</NuxtLink>
           </ul>
           <div class="header__log">
-            <div class="header__in">Log In</div>
-            <Button class="header__login btn--mobile-menu">Log In</Button>
+            <div class="header__in" @click="toggleMenu">Log In</div>
+            <Button class="header__login btn--mobile-menu" @click="toggleMenu">Log In</Button>
           </div>
           <div class="header__menu-close" @click="toggleMenu">X</div>
         </nav>
@@ -39,6 +47,7 @@ const toggleMenu = () => {
  
 <style scoped lang='scss'>
 .header{
+  width: 100%;
   height: 106px;
   padding: 20px 0;
   

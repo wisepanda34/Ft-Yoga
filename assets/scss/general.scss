@@ -4,14 +4,14 @@ html {
 }
 
 body {
-  position: relative;
-  overflow-x: hidden;
-
   font-family: "Poppins-Regular", sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: 150%;
   color: $text-main;
+}
+.no-scroll {
+  overflow: hidden;
 }
 
 .page {
@@ -39,8 +39,8 @@ body {
   transform: translateX(-50%);
   width: 100px;
   height: 100px;
-  
   z-index: 1000;
+
   &-round {
     display: block;
     width: 100px;

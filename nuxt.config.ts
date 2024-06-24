@@ -18,6 +18,11 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: true },
   modules: ['@pinia/nuxt', "@nuxt/image", 'nuxt-swiper', '@morev/vue-transitions/nuxt'],
+  swiper: {
+    // prefix: 'Swiper',
+    // styleLang: 'css',
+    // modules: ['navigation'],
+  },
   css: [
     '~/assets/scss/main.scss',
   ],

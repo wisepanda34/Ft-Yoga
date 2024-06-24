@@ -100,6 +100,7 @@ const handleStart = () => {
 }
 @media (max-width: 740px) {
   .healthy {
+    padding: 80px 0 20px;
     &__picture {
       width: 100%;
     }

@@ -2,11 +2,17 @@
 
  
 <template>
-  <Teacher/>
-  <Nishe/>
-  <Healthy/>
-  <Workout/>
-  <Follow/>
-  <Newsletter/>
+  <div>
+    <Teacher/>
+    <Nishe/>
+    <Healthy/>
+    <Workout/>
+    <Follow/>
+    <Newsletter/>
+  </div>
 </template>
+
+<style scoped lang="scss">
+
+</style>
  

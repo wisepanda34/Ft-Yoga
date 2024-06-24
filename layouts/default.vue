@@ -9,12 +9,10 @@ const isLoading = ref(false)
   <div class="page">
     <Header/>
     <slot/>
-
     <Footer/>
     <div v-if="isLoading" class="spinner">
       <span class="spinner-round"></span>
     </div>
-
   </div>
 </template>
  
