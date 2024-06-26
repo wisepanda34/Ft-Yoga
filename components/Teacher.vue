@@ -35,8 +35,8 @@ const teacherRef = useAnimationObserver(addAnimation);
             <div class="text-xl">Participent</div>
           </div>
         </div>
-        <div class="teacher__picture">
-          <NuxtImg src="/images/girl1.png" alt="img"/>
+        <div ref="teacherRef" class="teacher__picture">
+          <NuxtImg class="teacher__img" src="/images/girl1.png" alt="img"/>
         </div>
       </div>
 
@@ -122,6 +122,9 @@ const teacherRef = useAnimationObserver(addAnimation);
       right: 0;
       width: 680px;
     }
+    .animate &__img {
+    animation: slideInFromLeft 0.5s linear forwards;
+  }
     
     @media (min-width: 1420px) {
       position: absolute;
@@ -151,7 +154,7 @@ const teacherRef = useAnimationObserver(addAnimation);
       padding-top: 0;
     }
     &__title {
-      font-size: 15vw;
+      font-size: 12vw;
     }
     &__decor {
       transform: translateX(70vw);
@@ -168,6 +171,9 @@ const teacherRef = useAnimationObserver(addAnimation);
  }
  @media (max-width: 740px) {
   .teacher {
+    &__title {
+      font-size: 15vw;
+    }
     &__participent {
     display: grid;
     grid-template-columns: 130px 130px;

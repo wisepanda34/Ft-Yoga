@@ -18,69 +18,50 @@ const  slides = [
   },
 ]
 
-const swiperRef = ref(null);
-const swiper = useSwiper()
-console.log('swiper');
-
-
-const goToNextSlide = () => {
-  if (swiperRef.value) {
-    // swiperRef.value.swiper.slideNext();
-  }
-  // console.log('swiperRef.value ', swiperRef.value);
-  // console.log('swiperRef.value.swiper ', swiperRef.value.swiper);
-};
-
-onMounted(()=>{
-  // console.log('swiperRef.value :', swiperRef.value );
-  
-})
 </script>
  
 <template>
   <section class="nishe">
     <div class="container">
-      <div class="nishe__wrapper">
       
-        <Swiper
-          class="nishe__swiper"
-          :modules="[SwiperAutoplay, SwiperEffectCreative, SwiperNavigation]"
-          :slides-per-view="1"
-          :loop="true"
-          :navigation="false"
-          :effect="'creative'"
-          :autoplay="{
-            delay: 10000,
-            disableOnInteraction: true,
-            duration: 1600
-          }"
-          :creative-effect="{
-            prev: {
-              shadow: false,
-              translate: ['-20%', 0, -1],
-            },
-            next: {
-              translate: ['100%', 0, 0],
-            },
-            
-          }"
-        >
-          <SwiperSlide v-for="slide in slides" :key="slide" class="nishe__slide">
-            <div class="nishe__number">{{ slide.number }}</div>
-            <div class="nishe__picture">
-              <NuxtImg class="nishe__picture-img" :src="`${slide.link}`" alt="img"/>
+      <Swiper
+        class="nishe__swiper"
+        :modules="[SwiperAutoplay, SwiperEffectCreative, SwiperNavigation]"
+        :slides-per-view="1"
+        :loop="true"
+        :navigation="false"
+        :effect="'creative'"
+        :autoplay="{
+          delay: 10000,
+          disableOnInteraction: true,
+          duration: 1600
+        }"
+        :creative-effect="{
+          prev: {
+            shadow: false,
+            translate: ['-20%', 0, -1],
+          },
+          next: {
+            translate: ['100%', 0, 0],
+          },
+          
+        }"
+      >
+        <SwiperSlide v-for="slide in slides" :key="slide" class="nishe__slide">
+          <div class="nishe__number">{{ slide.number }}</div>
+          <div class="nishe__picture">
+            <NuxtImg class="nishe__picture-img" :src="`${slide.link}`" alt="img"/>
+          </div>
+          <div class="nishe__content">
+            <div class="nishe__text">
+              {{ slide.text }}
+              <div class="nishe__text-stars"></div>
             </div>
-            <div class="nishe__content">
-              <div class="nishe__text">
-                {{ slide.text }}
-                <div class="nishe__text-stars"></div>
-              </div>
-            </div>
-          </SwiperSlide >
-          <SwiperControl class="nishe__next"/>
-        </Swiper>
-        
-      </div>
+          </div>
+        </SwiperSlide >
+        <SwiperControl class="nishe__next"/>
+      </Swiper>
+      
     </div>
   </section>
 </template>
@@ -88,9 +69,6 @@ onMounted(()=>{
 <style scoped lang='scss'>
 .nishe {
   padding: 20px 0;
-
-  &__wrapper {
-  }
 
   &__swiper {
     position: relative;
@@ -114,6 +92,10 @@ onMounted(()=>{
     width: 180px;
     height: 170px;
     z-index: 1000;
+
+    &:hover {
+      transform: scale(1.02);
+    }
   }
 
   &__number {
@@ -174,9 +156,6 @@ onMounted(()=>{
 }
 @media (max-width: 650px) {
   .nishe {
-    &__wrapper {
-      row-gap: 0;
-    }
     &__number {
       height: 80px;
     }
