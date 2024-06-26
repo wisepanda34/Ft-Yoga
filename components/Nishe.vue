@@ -19,6 +19,9 @@ const  slides = [
 ]
 
 const swiperRef = ref(null);
+const swiper = useSwiper()
+console.log('swiper');
+
 
 const goToNextSlide = () => {
   if (swiperRef.value) {
@@ -62,7 +65,6 @@ onMounted(()=>{
             
           }"
         >
-        
           <SwiperSlide v-for="slide in slides" :key="slide" class="nishe__slide">
             <div class="nishe__number">{{ slide.number }}</div>
             <div class="nishe__picture">
@@ -74,42 +76,31 @@ onMounted(()=>{
                 <div class="nishe__text-stars"></div>
               </div>
             </div>
-          </SwiperSlide>
-
+          </SwiperSlide >
+          <SwiperControl class="nishe__next"/>
         </Swiper>
-        <div class="nishe__next" >
-          <div class="nishe__next-img" @click="goToNextSlide">
-            <div id="arrow"></div>
-            <div id="ellipse-1"></div>
-            <div id="ellipse-2"></div>
-          </div>
-        </div>
+        
       </div>
     </div>
   </section>
 </template>
  
 <style scoped lang='scss'>
-.swiper-button-next::after {
-  content: url(/images/next.png);
-  top:50px;
-}
 .nishe {
-  padding: 20px 0 70px;
+  padding: 20px 0;
 
   &__wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
   }
 
   &__swiper {
-    max-width: calc(100% - 180px) ;
+    position: relative;
+    width: 100%;
+    min-height: 420px;
+    display: flex;
   }
   
   &__slide {
-    background: white;
+    background: $white;
 
     display: flex;
     gap: 10px;
@@ -117,48 +108,12 @@ onMounted(()=>{
     align-items: start;
   }
   &__next {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
     width: 180px;
-    height: 132px;
-
-    &-img {
-    position: relative;
-    width: 180px;
-    height: 132px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    order: 4;
-    cursor: pointer;
-
-    #arrow {
-      width: 68px;
-      height: 30px;
-      background-image: url(/images/next.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-    #ellipse-1 {
-      position: absolute;
-      top: -16px;
-      left: 50px;
-      width: 80px;
-      height: 160px;
-      background-image: url(/images/ellipse.png);
-      background-size: cover;
-      transform: rotate(60deg);
-    }
-    #ellipse-2 {
-      position: absolute;
-      top: -16px;
-      left: 50px;
-      width: 80px;
-      height: 160px;
-      background-image: url(/images/ellipse.png);
-      background-size: cover;
-      transform: rotate(45deg);
-    }
-  }
+    height: 170px;
+    z-index: 1000;
   }
 
   &__number {
@@ -209,38 +164,15 @@ onMounted(()=>{
       background-size: cover;
     }
   }
- 
-}
-@media (max-width: 1179px) {
-  .nishe {
-    padding: 20px 0;
-    &__wrapper {
-      flex-direction: column;
-      margin-top: 2vw;
-    }
-    &__swiper {
-      max-width: 100%;
-    }
-    &__next {
-      width: 100%;
-
-      &-img {
-        margin: 0 30px 0 auto;
-      }
-    }
-  }
 }
 @media (max-width: 900px) {
   .nishe {
     &__slide {
       flex-wrap: wrap;
     }
-    &__content {
-      height: 140px;
-    }
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .nishe {
     &__wrapper {
       row-gap: 0;
@@ -252,6 +184,10 @@ onMounted(()=>{
       width: 100%;
       flex-basis: 100%;
       margin-top: 0;
+    }
+    &__next {
+      width: 90px;
+      height: 85px;
     }
   }
 }

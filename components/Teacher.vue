@@ -9,6 +9,7 @@ const teacherRef = useAnimationObserver(addAnimation);
 <template>
   <section class="teacher">
     <div class="container">
+
       <div class="teacher__wrapper">
         <div class="teacher__content">
           <h1 class="teacher__title">
@@ -34,37 +35,40 @@ const teacherRef = useAnimationObserver(addAnimation);
             <div class="text-xl">Participent</div>
           </div>
         </div>
-        <div ref="teacherRef" class="teacher__picture">
-          <NuxtImg class="teacher__img"  src="/images/girl1.png" alt="img"/>
+        <div class="teacher__picture">
+          <NuxtImg src="/images/girl1.png" alt="img"/>
         </div>
       </div>
+
     </div>
-    
   </section>
 </template>
  
 <style scoped lang='scss'>
 
- .teacher {
-  padding: 20px 0 50px;
+.teacher {
+  padding: 20px 0 90px;
+  
   &__wrapper {
-    width: 100%;
     position: relative;
+    display: flex;
   }
+  
   &__content {
-    width: 600px;
-    padding-top: 5%;
+    width: 640px;
+    padding-top: 2%;
   }
+  
   &__title {
-    width: 600px;
+    width: 100%;
     font-family: "Mollie-Glaston", serif;
     font-size: 120px;
     line-height: 120%;
-    letter-spacing: -3px;
+    letter-spacing: 0px;
   }
+  
   &__yoga {
     display: inline-block;
-    max-width: 270px;
     padding: 0 15px 10px;
     background: $linear-purple;
     color: $white;
@@ -72,27 +76,33 @@ const teacherRef = useAnimationObserver(addAnimation);
     transform: rotate(12deg);
     animation: small-rotate 4s 2s infinite linear;
   }
+  
   &__decor {
     display: inline-block;
     margin-bottom: 30px;
     transform: translateX(-15px);
   }
+  
   &__text {
     font-size: 20px;
   }
+  
   &__btn {
     margin: 32px 0;
   }
+  
   &__participent {
     display: grid;
     grid-template-columns: 130px 130px;
     column-gap: 76px;
   }
+  
   &__nums {
     font-family: "Mollie-Glaston", serif;
     line-height: 120%;
     font-size: 64px;
     letter-spacing: -1px;
+    
     &-plus {
       display: inline-block;
       font-size: 40px;
@@ -101,82 +111,72 @@ const teacherRef = useAnimationObserver(addAnimation);
       transform: translateY(-3px);
     }
   }
+  
   &__picture {
-    position: absolute;
-    top: 0;
-    right: -60px;
-    width: 822px;
-    height: 960px;
-    z-index: 10;
-  }
-  &__img {
-    max-width: 100%;
-    object-fit: cover;
-    transform: translateX(20px);
-    opacity: 0;
+    position: relative;
+    width: calc(100% - 630px);
+
+    img {
+      position: absolute;
+      bottom: 0; 
+      right: 0;
+      width: 680px;
+    }
+    
+    @media (min-width: 1420px) {
+      position: absolute;
+      top: 0;
+      right: -80px;
+      width: 822px;
+      height: 960px;
+      img {
+        position: static;
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
   .animate &__img {
     animation: slideInFromRight 0.5s linear forwards;
   }
- }
+}
  @media (max-width: 1179px) {
   .teacher {
     padding: 20px 0;
-    &__content {
-      padding-top: 0;
-    }
-    &__picture{
-      width: 50vw;
-      height: auto;
-      padding-top: 10%;
-    }
-  }
- }
- @media (max-width: 991px) {
-  .teacher {
     &__wrapper {
-      display: flex;
       flex-direction: column;
-      gap: 20px;
     }
     &__content {
       width: 100%;
+      padding-top: 0;
+    }
+    &__title {
+      font-size: 15vw;
     }
     &__decor {
       transform: translateX(70vw);
     }
-    &__picture {
-      position: static;
+    &__picture{
       width: 70%;
       margin: 0 auto;
-      padding: 0 0 10%;
+      img {
+        position: static;
+        width: 100%;
+      }
     }
   }
  }
  @media (max-width: 740px) {
   .teacher {
-    &__title {
-      width: 100%;
-      font-size: 18vw;
-    }
+    &__participent {
+    display: grid;
+    grid-template-columns: 130px 130px;
+    column-gap: 30px;
+  }
     &__picture {
-      width: 100%;
-      padding: 0;
+      width: 90%;
+      padding-top: 2%;
     }
   }
  }
- @media (max-width: 600px) {
-  .teacher {
-    &__nums {
-      font-size: 40px;
-    }
-    &__btn {
-      margin: 32px auto;
-    }
-    &__participent {
-      grid-template-columns: 1fr 1fr;
-      column-gap: 50px;
-    }
-  }
-}
 </style>

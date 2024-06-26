@@ -3,7 +3,6 @@
 import { useAnimationObserver } from '~/composables/useAnimation';
 
 const followRef = useAnimationObserver(addAnimation, removeAnimation);
-const followImgRef = useAnimationObserver(addAnimation, removeAnimation);
 
 </script>
  
@@ -23,7 +22,7 @@ const followImgRef = useAnimationObserver(addAnimation, removeAnimation);
         </div>
         <NuxtImg id="girl5" order="3" src="/images/girl5.png" alt="img"/>
       </div>
-      <div ref="followImgRef" class="follow__img">
+      <div class="follow__img">
         <NuxtImg id="girl6" src="/images/girl6.png" alt="img"/>
         <NuxtImg id="boy2" src="/images/boy2.png" alt="img"/>
       </div>
@@ -87,9 +86,9 @@ const followImgRef = useAnimationObserver(addAnimation, removeAnimation);
   &__img {
     margin: 30px auto 80px;
 
-    display: flex;
-    justify-content: space-between; 
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
   }
 
   #girl4 {
@@ -105,14 +104,12 @@ const followImgRef = useAnimationObserver(addAnimation, removeAnimation);
     }
 
     #girl6 {
-      width: 588px;
-      max-width: 50%;
+      width: 95%;
       transform: rotate(15deg);
     }
 
     #boy2 {
-      width: 588px;
-      max-width: 50%;
+      width: 95%;
       transform: rotate(-15deg);
     }
 }
