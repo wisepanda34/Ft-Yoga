@@ -39,15 +39,14 @@ const  slides = [
         :creative-effect="{
           prev: {
             shadow: false,
-            translate: ['-20%', 0, -1],
+            translate: ['-20%', 0, 0],
           },
           next: {
             translate: ['100%', 0, 0],
           },
-          
         }"
       >
-        <SwiperSlide v-for="slide in slides" :key="slide" class="nishe__slide">
+        <SwiperSlide v-for="slide in slides" :key="slide.number" class="nishe__slide">
           <div class="nishe__number">{{ slide.number }}</div>
           <div class="nishe__picture">
             <NuxtImg class="nishe__picture-img" :src="`${slide.link}`" alt="img"/>
@@ -58,6 +57,7 @@ const  slides = [
               <div class="nishe__text-stars"></div>
             </div>
           </div>
+          <div class="nishe__empty"></div>
         </SwiperSlide >
         <SwiperControl class="nishe__next"/>
       </Swiper>
@@ -85,19 +85,20 @@ const  slides = [
     justify-content: space-between;
     align-items: start;
   }
+  &__empty {
+    width: 180px;
+    height: 240px;
+  }
   &__next {
     position: absolute;
-    bottom: 0px;
+    bottom: -40px;
     right: 0px;
     width: 180px;
-    height: 170px;
-    z-index: 1000;
+    height: 240px;
+    z-index: 100;
 
-    &:hover {
-      transform: scale(1.02);
-    }
+    transform: translateY(-220px);
   }
-
   &__number {
     width: 120px;
     height: 240px;
@@ -147,10 +148,28 @@ const  slides = [
     }
   }
 }
+@media (max-width: 1179px) {
+  .nishe {
+    &__empty {
+      display: none;
+    }
+    &__next {
+      bottom: 0;
+      height: 170px;
+      transform: translateY(0);
+
+    }
+  }
+}
 @media (max-width: 900px) {
   .nishe {
     &__slide {
       flex-wrap: wrap;
+    }
+    &__content {
+      width: 70%;
+      height: 150px;
+      padding-left: 40px;
     }
   }
 }
@@ -164,9 +183,17 @@ const  slides = [
       flex-basis: 100%;
       margin-top: 0;
     }
+    &__content {
+      width: 100%;
+      height: auto;
+      align-items: start;
+      padding: 50px 20px 100px 40px;
+    }
     &__next {
       width: 90px;
       height: 85px;
+      bottom: 15px;
+      right: 40px;
     }
   }
 }
