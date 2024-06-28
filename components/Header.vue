@@ -140,8 +140,8 @@ const toggleMenu = () => {
       &-close {
         display: block;
         position: absolute;
-        top: 12px;
-        right: 18px;
+        top: 26px;
+        right: 24px;
         font-size: 40px;
         color: $white;
         transform: scaleX(1.4);
