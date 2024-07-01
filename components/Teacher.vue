@@ -1,8 +1,8 @@
 <!-- Teacher.vue -->
 <script setup>
-import { useAnimationObserver } from '~/composables/useAnimation';
+// import { useAnimationObserver } from '~/composables/useAnimation';
 
-const teacherRef = useAnimationObserver(addAnimation);
+// const teacherRef = useAnimationObserver(addAnimation);
 
 </script>
  
@@ -35,7 +35,8 @@ const teacherRef = useAnimationObserver(addAnimation);
             <div class="text-xl">Participent</div>
           </div>
         </div>
-        <div ref="teacherRef" class="teacher__picture">
+        <div class="teacher__picture">
+          <!-- ref="teacherRef" -->
           <NuxtImg class="teacher__img" src="/images/girl1.png" alt="img"/>
         </div>
       </div>
@@ -93,8 +94,7 @@ const teacherRef = useAnimationObserver(addAnimation);
   
   &__participent {
     display: grid;
-    grid-template-columns: 130px 130px;
-    column-gap: 76px;
+    grid-template-columns: 200px 200px;
   }
   
   &__nums {
@@ -175,13 +175,24 @@ const teacherRef = useAnimationObserver(addAnimation);
       font-size: 15vw;
     }
     &__participent {
-    display: grid;
-    grid-template-columns: 130px 130px;
-    column-gap: 30px;
-  }
+      display: grid;
+      grid-template-columns: 160px 160px;
+    }
     &__picture {
       width: 90%;
       padding-top: 2%;
+    }
+  }
+ }
+ @media (max-width: 475px) {
+  .teacher {
+    &__participent {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 0;
+    }
+    &__nums {
+      font-size: 14vw;
     }
   }
  }

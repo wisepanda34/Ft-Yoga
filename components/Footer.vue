@@ -45,7 +45,7 @@
           </NuxtLink>
         </div>
         <div class="footer__copy">
-          <NuxtImg src="/svg/copy.svg" width="15" alt="icon"/>
+          <div class="footer__copy-icon"></div>
           <p class="footer__copy-white">2024 Copyright, <span class="text-linear-purple">Falcon Throught</span></p>
         </div>
       </div>
@@ -122,21 +122,26 @@
     &-white {
       color: $white;
     }
+
+    &-icon {
+      content: url(/svg/copy.svg);
+      padding-bottom: 3px;
+    }
   }
 }
 @media (max-width: 900px) {
   .footer{
-    &__container{
+    &__container {
       padding: 40px 30px;
     }
-    &__head{
+    &__head {
       grid-template-columns: auto;
 
       &-about {
         width: 100%;
         margin: 0 auto;
       }
-      &-info{
+      &-info {
         gap: 30px;
         margin-top: 30px;
       }
@@ -150,23 +155,24 @@
   }
 }
 @media (max-width: 650px) {
-  .footer{
-    &__container{
-      padding: 30px;
+  .footer {
+    &__container {
+      padding: 30px 20px;
     }
-    &__head{
+    &__head {
 
-      &-info{
+      &-info {
         flex-direction: column;
         gap: 30px;
         margin-top: 30px;
-        h4{
+        h4 {
           margin-bottom: 15px;
         }
       }
     }
-    &__low{
+    &__low {
       flex-direction: column;
+      align-items: center;
       gap: 30px;
     }
   }
